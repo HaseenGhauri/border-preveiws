@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border-Radius Previewer</title>
+    <link rel="stylesheet" href="main.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Border-Radius Previewer</h1>
+        <p class="subtitle">Experiment with border-radius values and see the results in real-time</p>
+
+        <div class="mode-toggle">
+            <button class="mode-btn active" onclick="switchMode('simple')">Simple Mode (4 Values)</button>
+            <button class="mode-btn" onclick="switchMode('advanced')">Advanced Mode (8 Values)</button>
+        </div>
+
+        <div class="main-content">
+            <div class="preview-section">
+                <div class="preview-box" id="previewBox"></div>
+            </div>
+
+            <div class="controls-section">
+                <div id="simpleControls">
+                    <div class="control-group">
+                        <label class="control-label">Corner Radius</label>
+                        
+                        <div class="slider-container">
+                            <span class="slider-label">Top-Left</span>
+                            <input type="range" id="topLeft" min="0" max="250" value="0" oninput="updateRadius()">
+                            <span class="value-display" id="topLeftValue">0px</span>
+                        </div>
+
+                        <div class="slider-container">
+                            <span class="slider-label">Top-Right</span>
+                            <input type="range" id="topRight" min="0" max="250" value="0" oninput="updateRadius()">
+                            <span class="value-display" id="topRightValue">0px</span>
+                        </div>
+
+                        <div class="slider-container">
+                            <span class="slider-label">Bottom-Right</span>
+                            <input type="range" id="bottomRight" min="0" max="250" value="0" oninput="updateRadius()">
+                            <span class="value-display" id="bottomRightValue">0px</span>
+                        </div>
+
+                        <div class="slider-container">
+                            <span class="slider-label">Bottom-Left</span>
+                            <input type="range" id="bottomLeft" min="0" max="250" value="0" oninput="updateRadius()">
+                            <span class="value-display" id="bottomLeftValue">0px</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="advancedControls" class="hidden">
+                    <div class="control-group">
+                        <label class="control-label">Top-Left Corner</label>
+                        <div class="slider-container">
+                            <span class="slider-label">Horizontal</span>
+                            <input type="range" id="topLeftH" min="0" max="250" value="0" oninput="updateRadius()">
+                            <span class="value-display" id="topLeftHValue">0px</span>
+                        </div>
+                        <div class="slider-container">
+                            <span class="slider-label">Vertical</span>
+                            <input type="range" id="topLeftV" min="0" max="250" value="0" oninput="updateRadius()">
+                            <span class="value-display" id="topLeftVValue">0px</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Top-Right Corner</label>
+                        <div class="slider-container">
+                            <span class="slider-label">Horizontal</span>
+                            <input type="range" id="topRightH" min="0" max="250" value="0" oninput="updateRadius()">
+                            <span class="value-display" id="topRightHValue">0px</span>
+                        </div>
+                        <div class="slider-container">
+                            <span class="slider-label">Vertical</span>
+                            <input type="range" id="topRightV" min="0" max="250" value="0" oninput="updateRadius()">
+                            <span class="value-display" id="topRightVValue">0px</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Bottom-Right Corner</label>
+                        <div class="slider-container">
+                            <span class="slider-label">Horizontal</span>
+                            <input type="range" id="bottomRightH" min="0" max="250" value="0" oninput="updateRadius()">
+                            <span class="value-display" id="bottomRightHValue">0px</span>
+                        </div>
+                        <div class="slider-container">
+                            <span class="slider-label">Vertical</span>
+                            <input type="range" id="bottomRightV" min="0" max="250" value="0" oninput="updateRadius()">
+                            <span class="value-display" id="bottomRightVValue">0px</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Bottom-Left Corner</label>
+                        <div class="slider-container">
+                            <span class="slider-label">Horizontal</span>
+                            <input type="range" id="bottomLeftH" min="0" max="250" value="0" oninput="updateRadius()">
+                            <span class="value-display" id="bottomLeftHValue">0px</span>
+                        </div>
+                        <div class="slider-container">
+                            <span class="slider-label">Vertical</span>
+                            <input type="range" id="bottomLeftV" min="0" max="250" value="0" oninput="updateRadius()">
+                            <span class="value-display" id="bottomLeftVValue">0px</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="css-output" id="cssOutput">
+            <code>border-radius: 0px 0px 0px 0px;</code>
+        </div>
+
+        <button class="copy-btn" onclick="copyCSS()">Copy CSS to Clipboard</button>
+    </div>
+
+   <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            background: #0d1117;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: #161b22;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            max-width: 1200px;
+            width: 100%;
+            border: 1px solid #30363d;
+        }
+
+        h1 {
+            text-align: center;
+            color: #58a6ff;
+            margin-bottom: 10px;
+            font-size: 2em;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #8b949e;
+            margin-bottom: 40px;
+            font-size: 0.9em;
+        }
+
+        .mode-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .mode-btn {
+            padding: 10px 20px;
+            border: 1px solid #30363d;
+            background: #21262d;
+            color: #c9d1d9;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .mode-btn.active {
+            background: #238636;
+            color: #ffffff;
+            border-color: #238636;
+        }
+
+        .mode-btn:hover {
+            background: #30363d;
+            border-color: #58a6ff;
+            box-shadow: 0 4px 12px rgba(88, 166, 255, 0.2);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .preview-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #0d1117;
+            border-radius: 8px;
+            padding: 40px;
+            min-height: 400px;
+            border: 1px solid #30363d;
+        }
+
+        .preview-box {
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(135deg, #1f6feb 0%, #58a6ff 100%);
+            transition: border-radius 0.3s ease;
+            box-shadow: 0 10px 30px rgba(88, 166, 255, 0.3);
+        }
+
+        .controls-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .control-group {
+            background: #0d1117;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #30363d;
+        }
+
+        .control-label {
+            font-weight: 600;
+            color: #58a6ff;
+            margin-bottom: 12px;
+            display: block;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .slider-container:last-child {
+            margin-bottom: 0;
+        }
+
+        .slider-label {
+            min-width: 100px;
+            font-size: 0.85em;
+            color: #8b949e;
+            font-weight: 500;
+        }
+
+        input[type="range"] {
+            flex: 1;
+            height: 6px;
+            border-radius: 3px;
+            background: #21262d;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #58a6ff;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            background: #1f6feb;
+            box-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #58a6ff;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        input[type="range"]::-moz-range-thumb:hover {
+            transform: scale(1.2);
+            background: #1f6feb;
+            box-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+        }
+
+        .value-display {
+            min-width: 50px;
+            text-align: right;
+            font-weight: 600;
+            color: #58a6ff;
+            font-size: 0.9em;
+        }
+
+        .css-output {
+            background: #0d1117;
+            color: #79c0ff;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: auto;
+            border: 1px solid #30363d;
+        }
+
+        .css-output code {
+            display: block;
+            white-space: pre;
+        }
+
+        .copy-btn {
+            background: #238636;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            width: 100%;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+
+        .copy-btn:hover {
+            background: #2ea043;
+            box-shadow: 0 6px 20px rgba(35, 134, 54, 0.4);
+        }
+
+        .copy-btn:active {
+            transform: translateY(0);
+        }
+
+        .copy-btn.copied {
+            background: #1f6feb;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 968px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .preview-box {
+                width: 200px;
+                height: 200px;
+            }
+
+            .slider-label {
+                min-width: 80px;
+                font-size: 0.8em;
+            }
+        }
